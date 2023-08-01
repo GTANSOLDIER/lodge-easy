@@ -2,26 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+main {
+  margin: 0;
+  padding: 0;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.HeroSection {
+  background-image: url("../assets/housePic.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.imageSect {
+  background-image: url("../assets/houseImg1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.searchNowSect {
+  background-image: url("../assets/searchNowSectBg.png");
+  background-position: center;
+  background-size: cover;
+}
+input {
+  -webkit-border-radius: 0;
+  outline: none;
+}
+.homeImg1{
+  background-image: url("../assets/img1.webp");
+  background-position: center;
+  background-size: cover;
+}
+.homeImg2{
+  background-image: url("../assets/img2.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.homeImg3{
+  background-image: url("../assets/img3.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.filterCheck {
+    accent-color: #BDBDBD;
+}
+
+.apartFilListOpen {
+  animation-name: filterAnim;
+  animation-duration: 300ms;
+}
+
+.rememberMeCheck {
+  accent-color: #458CA2;
+}
+
+.dashboardTable th {
+  @apply font-nunito font-medium text-[12px] text-[#545454];
 }
