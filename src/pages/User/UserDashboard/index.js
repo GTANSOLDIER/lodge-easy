@@ -48,7 +48,7 @@ export default function UserDashboard() {
         }}> {
           !showMenu ? (<CgMenuRight color="#545454" size={32}/>) : (<GrClose color="#545454" size={24}/>)
         }  </span>
-        <span className={`generalMenu flex flex-col w-[50vw] rounded-bl absolute top-14 right-0 items-center bg-[#EAEAEA] transition-all ${showMenu ? 'right-0' : '-right-[200px]'}`}>
+        <span className={`generalMenu flex flex-col w-[50vw] rounded-bl absolute top-14 items-center bg-[#EAEAEA] transition-all  ${showMenu ? 'right-0' : '-right-[100%]'}`}>
           <Link className="pt-8 py-6" href="/">Home</Link>
           <Link className="py-6" href="/blog">Blog</Link>
           <Link className="py-6" href="/store">Store</Link>
