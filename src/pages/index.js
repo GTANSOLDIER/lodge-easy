@@ -14,10 +14,13 @@ import { AiFillYoutube } from "react-icons/ai";
 import { useState } from "react";
 import HostelItem from "./HostelItem";
 import Link from "next/link";
+import { CgMenuRight } from "react-icons/cg";
+import { GrClose } from "react-icons/gr";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [showMenu, setShowMenu] = useState(false)
   const [homepageHouseList, setHomepageHouseList] = useState([
     {
       id: 1,

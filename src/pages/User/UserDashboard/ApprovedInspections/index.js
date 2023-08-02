@@ -5,6 +5,7 @@ import Link from "next/link";
 import {MdDashboard} from "react-icons/md";
 import {BiSolidMessageRoundedDetail} from "react-icons/bi";
 import {BiSolidUser} from "react-icons/bi";
+import {BiArrowBack} from "react-icons/bi";
 import {AiFillHeart} from "react-icons/ai";
 
 export default function ApprovedInspections() {
@@ -109,9 +110,11 @@ export default function ApprovedInspections() {
 
   return (
     <div className="pb-20">
-      <div className="font-nunito font-bold text-[16px] px-5 py-4 border-b-[1px] border-b-[#EAEAEA] text-[#545454]">
-        Dashboard
+      <Link href="/User/UserDashboard">
+      <div className="flex items-center font-nunito font-bold text-[16px] px-5 py-4 border-b-[1px] border-b-[#EAEAEA] text-[#545454]">
+        <BiArrowBack size={26} className="mr-2"/> Back to Dashboard
       </div>
+      </Link>
       <div className="text-[16px] font-nunito font-bold px-12 py-2 text-[#545454]">
         {" "}
         Approved Inspections{" "}
@@ -141,7 +144,7 @@ export default function ApprovedInspections() {
         </div>
       </div>
 
-      <div className=" flex flex-row text-[#BDBDBD] items-center justify-between fixed bottom-0 w-full px-[30px] py-[10px] border-t-[1px] border-t-[#EAEAEA] bg-white">
+      <div className=" flex flex-row text-[#bdbdbd] items-center justify-between fixed bottom-0 w-full px-[30px] py-[10px] border-t-[1px] border-t-[#EAEAEA] bg-white">
         <Link href="/User/UserDashboard" className="flex flex-col items-center justify-center">
           <MdDashboard className="text-[24px] text-[#458CA2]" />
           <div className="font-nunito font-bold text-[12px] text-[#545454]">

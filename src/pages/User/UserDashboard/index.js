@@ -6,6 +6,8 @@ import { MdDashboard } from "react-icons/md";
 import { BiSolidMessageRoundedDetail } from "react-icons/bi";
 import { BiSolidUser } from "react-icons/bi";
 import { AiFillHeart } from "react-icons/ai";
+import { CgMenuRight } from "react-icons/cg";
+import { GrClose } from "react-icons/gr";
 import { FaClipboardList } from "react-icons/fa";
 import allListIcon from "../../../assets/allList.svg";
 import completedListIcon from "../../../assets/completedList.svg";
@@ -13,6 +15,7 @@ import pendingListIcon from "../../../assets/pendingList.svg";
 import cancelledListIcon from "../../../assets/cancelledList.svg";
 
 export default function UserDashboard() {
+  const [showMenu, setShowMenu] = useState(false)
   const [inspList, setInspList] = useState([
     {
       serialNumber: "1",
@@ -37,9 +40,20 @@ export default function UserDashboard() {
   ]);
 
   return (
-    <div>
-      <div className="font-nunito font-bold text-[16px] px-5 py-4 border-b-[1px] border-b-[#EAEAEA] text-[#545454]">
-        Dashboard
+    <div className="overflow-x-hidden">
+      <div className=" relative flex justify-between items-center font-nunito font-bold text-[16px] px-5 py-4 border-b-[1px] border-b-[#EAEAEA] text-[#545454]">
+        <span>Dashboard</span>
+        <span onClick={()=> {
+          setShowMenu(!showMenu)
+        }}> {
+          !showMenu ? (<CgMenuRight color="#545454" size={32}/>) : (<GrClose color="#545454" size={24}/>)
+        }  </span>
+        <span className={`generalMenu flex flex-col w-[50vw] rounded-bl absolute top-14 right-0 items-center bg-[#EAEAEA] transition-all ${showMenu ? 'right-0' : '-right-[200px]'}`}>
+          <Link className="pt-8 py-6" href="/">Home</Link>
+          <Link className="py-6" href="/blog">Blog</Link>
+          <Link className="py-6" href="/store">Store</Link>
+          <Link className="py-6 pb-8" href="/support">Support</Link>
+        </span>
       </div>
       <div className=" mx-7 py-[18px] mr-7 overflow-scroll">
         <div className="min-w-[150vw] flex flex-row">
