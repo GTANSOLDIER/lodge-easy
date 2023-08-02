@@ -1,4 +1,4 @@
 {
   "extends": "next/core-web-vitals",
-  "rules" : { "react/jsx-props-no-spreading": "off"}
+  "rules" : { "react/jsx-props-no-spreading": "off", "react/jsx-key": "off"}
 }
