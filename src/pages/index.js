@@ -14,47 +14,11 @@ import { AiFillYoutube } from "react-icons/ai";
 import { useState } from "react";
 import HostelItem from "./HostelItem";
 import Link from "next/link";
-import { CgMenuRight } from "react-icons/cg";
-import { GrClose } from "react-icons/gr";
+import { hostelArray } from "./HostelArray";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [showMenu, setShowMenu] = useState(false)
-  const [homepageHouseList, setHomepageHouseList] = useState([
-    {
-      id: 1,
-      name: "Vice Lodge",
-      location: "Ekosodin",
-      price: "100,000",
-      comment:
-        "Lorem ipsum dolor sit amet consectetur. A nisl at purus mauris in quam massa.",
-    },
-    {
-      id: 2,
-      name: "Vice Lodge",
-      location: "Ekosodin",
-      price: "100,000",
-      comment:
-        "Lorem ipsum dolor sit amet consectetur. A nisl at purus mauris in quam massa.",
-    },
-    {
-      id: 3,
-      name: "Vice Lodge",
-      location: "Ekosodin",
-      price: "100,000",
-      comment:
-        "Lorem ipsum dolor sit amet consectetur. A nisl at purus mauris in quam massa.",
-    },
-    {
-      id: 4,
-      name: "Vice Lodge",
-      location: "Ekosodin",
-      price: "100,000",
-      comment:
-        "Lorem ipsum dolor sit amet consectetur. A nisl at purus mauris in quam massa.",
-    },
-  ]);
 
   return (
     <main>
@@ -170,7 +134,7 @@ export default function Home() {
               Excited about a potential home? Request an Inspection, and our Agents will arrange a viewing at your convenience.
               </div>
             </div>
-            <Link href="/User/UserSignup">
+            <Link href="/User/Signup">
               <button className="font-nunito font-bold mt-4 ml-6 py-3 px-7 bg-[#458CA2] text-white rounded-lg">
                 {" "}
                 Get Started{" "}
@@ -188,8 +152,8 @@ export default function Home() {
         Make Lodge Easy your ultimate destination for a seamless and stress-free apartment hunting experience. Start exploring now!
         </div>
         <div className="hostelListings w-full mt-4 grid grid-cols-2">
-          {homepageHouseList.map((h) => (
-            <HostelItem id={h.id} name={h.name} location={h.location} price={h.price} comment={h.comment}/>
+          {hostelArray.map((h) => (
+            <HostelItem area={h.area} id={h.id} name={h.name} location={h.location} price={h.price} comment={h.comment}/>
           ))}
         </div>
       </div>
@@ -364,13 +328,13 @@ export default function Home() {
       </div>
 
       <div className="bg-white sticky bottom-0 flex flex-row text-[#545454] justify-between items-center py-3 px-[30%] border-t-[3px] z-20">
-        <Link href="/User/UserSignup">
+        <Link href="/User/Signup">
           <div className="flex flex-col justify-center items-center">
             <LiaUserCircle className="text-[24px]" />
             <div className="text-[12px]"> Register </div>
           </div>
         </Link>
-        <Link href="/User/UserLogin">
+        <Link href="/User/Login">
           <div className="flex flex-col justify-center items-center">
             <LiaUserCircle className="text-[24px]" />
             <div className="text-[12px]"> Login </div>

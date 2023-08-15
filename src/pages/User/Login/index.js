@@ -7,7 +7,7 @@ import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { AiOutlineEye } from "react-icons/ai";
 import { useState } from "react";
 
-export default function UserLogin() {
+export default function Login() {
   const [showPwd, setShowPwd] = useState(false);
   return (
     <div className="">
@@ -66,7 +66,7 @@ export default function UserLogin() {
         </div>
       </div>
       <div className="px-7 py-8">
-        <Link href="/User/UserDashboard">
+        <Link href="/User/Dashboard">
           <button className="h-[45px] text-[14px] font-poppins font-medium text-white w-full bg-[#458CA2] rounded">
             Log In
           </button>
@@ -79,7 +79,7 @@ export default function UserLogin() {
       <div className="font-nunito text-[14px] font-normal text-center mt-[10vh] mb-20">
         {" "}
         Don't have an account yet?{" "}
-        <Link href="/User/UserSignup" className="text-[#458CA2]">
+        <Link href="/User/Signup" className="text-[#458CA2]">
           Sign Up
         </Link>
       </div>

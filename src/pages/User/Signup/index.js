@@ -6,7 +6,7 @@ import { useState } from "react";
 import {AiOutlineEyeInvisible} from "react-icons/ai";
 import { AiOutlineEye } from "react-icons/ai";
 
-export default function UserSignup() {
+export default function Signup() {
   const [showPwd, setShowPwd] = useState(false);
   const router = useRouter();
   return (
@@ -66,7 +66,7 @@ export default function UserSignup() {
       <div className="font-nunito text-[14px] font-normal text-center mt-[10vh] mb-20">
         {" "}
         Already have an account?{" "}
-        <Link href="/User/UserLogin" className="text-[#458CA2]">
+        <Link href="/User/Login" className="text-[#458CA2]">
           Log in
         </Link>
       </div>

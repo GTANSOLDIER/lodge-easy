@@ -1,14 +1,15 @@
 "use client";
-import { LiaUserCircle } from "react-icons/lia";
+import Footer from "./Footer";
 import { BsFilter } from "react-icons/bs";
 import { AiOutlineSearch } from "react-icons/ai";
 import { GrClose } from "react-icons/gr";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 import { useState } from "react";
-import HostelItem from "../HostelItem";
+import HostelItem from "../../HostelItem";
+import { AiFillHeart } from "react-icons/ai";
 import Link from "next/link";
-import { hostelArray } from "../HostelArray";
+import { hostelArray } from "@/pages/HostelArray";
 
 export default function Search() {
   const [searchValue, setSearchValue] = useState("");
@@ -259,20 +260,27 @@ export default function Search() {
       </div>
 
       <div className="rounded-md mt-7 mx-7 searchBar border-[2px] border-[#bdbdbd] flex flex-row items-center justify-center">
-        <AiOutlineSearch className="text-[#BDBDBD] text-[24px] w-[15%]" />
         <input
           type="text"
           placeholder="Search..."
-          className="py-2 w-[70%] text-[14px] border-none outline-none"
+          className="py-2 w-[80%] pl-[16px] text-[14px] border-none outline-none"
           onChange={(e) => {
             setSearchValue(e.target.value);
             setSearchResponse("Search results for ");
           }}
         />
+        <AiOutlineSearch className="text-[#BDBDBD] text-[24px] w-[20%]" />
+      </div>
+
+      <div className="mx-7 my-7 flex flex-row items-center justify-between">
         <BsFilter
-          className="text-[24px] w-[15%] text-[#BDBDBD]"
+          className="text-[24px] text-[#545454]"
           onClick={() => setOpenFilter(true)}
         />
+        <div className="p-[10px] rounded bg-[#EAEAEA] text-[#9D9D9D] flex flex-row items-center justify-center">
+          <div className="font-nunito font-bold text-[14px]">Saved</div>
+          <AiFillHeart className="text-[12px] ml-[8px]"/>
+        </div>
       </div>
 
       <div className="mx-7 mt-7 font-nunito text-[14px] text-[#545454] font-medium">
@@ -280,7 +288,7 @@ export default function Search() {
         {searchValue}
       </div>
 
-      <div className="hostelListings grid grid-cols-2 mx-5 my-3">
+      <div className="hostelListings grid grid-cols-2 mx-5 mb-16">
         {hostelArray
           .filter((house) =>
             house.name.toLowerCase().includes(searchValue.toLowerCase())
@@ -290,20 +298,7 @@ export default function Search() {
           ))}
       </div>
 
-      <div className="bg-white sticky bottom-0 flex flex-row text-[#545454] justify-between items-center py-3 px-[30%] border-t-[3px] z-20">
-        <Link href="/User/Signup">
-          <div className="flex flex-col justify-center items-center">
-            <LiaUserCircle className="text-[24px]" />
-            <div className="text-[12px]"> Register </div>
-          </div>
-        </Link>
-        <Link href="/User/Login">
-          <div className="flex flex-col justify-center items-center">
-            <LiaUserCircle className="text-[24px]" />
-            <div className="text-[12px]"> Login </div>
-          </div>
-        </Link>
-      </div>
+      <Footer />
     </div>
   );
 }

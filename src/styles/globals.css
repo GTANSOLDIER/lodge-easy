@@ -10,7 +10,6 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
-
 }
 
 main {
@@ -28,7 +27,9 @@ main {
   background-image: url("../assets/houseImg1.jpg");
   background-position: center;
   background-size: cover;
+  filter: brightness(50%);
 }
+
 .searchNowSect {
   background-image: url("../assets/searchNowSectBg.png");
   background-position: center;
@@ -69,4 +70,8 @@ input {
 
 .dashboardTable th {
   @apply font-nunito font-medium text-[12px] text-[#545454];
+}
+
+.profilePic {
+  background-image: url(../assets/userImg.jpg);
 }
