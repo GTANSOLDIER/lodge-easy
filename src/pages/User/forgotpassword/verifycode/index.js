@@ -1,14 +1,12 @@
 "use client";
 import { GrClose } from "react-icons/gr";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Verifypwd() {
-  const [showPwd, setShowPwd] = useState(false);
   return (
     <div className="">
       <div className="px-7 py-4 userSignupHeader flex flex-row items-center justify-between border-b-[1px] border-[#E0E0E0]">
-        <Link href="/">
+        <Link href="/User/Login">
           <GrClose className="text-[#BDBDBD] text-[16px]" />
         </Link>
         <div className="text-[#545454] text-[16px] font-semibold font-nunito">

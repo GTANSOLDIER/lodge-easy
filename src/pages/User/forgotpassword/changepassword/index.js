@@ -16,7 +16,7 @@ export default function ChangePwd() {
         <div className={` ${onSuccess ? "absolute opacity-100":"hidden opacity-0"} top-0 h-full w-full transition-opacity duration-300 bg-[#0000002a] z-10`}>
         </div>
       <div className="px-7 py-4 userSignupHeader flex flex-row items-center justify-between border-b-[1px] border-[#E0E0E0]">
-        <Link href="/">
+        <Link href="/User/Login">
           <GrClose className="text-[#BDBDBD] text-[16px]" />
         </Link>
         <div className="text-[#545454] text-[16px] font-semibold font-nunito">

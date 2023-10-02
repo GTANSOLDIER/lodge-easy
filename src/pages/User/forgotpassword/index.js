@@ -1,16 +1,16 @@
 "use client";
 import { GrClose } from "react-icons/gr";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function ForgotPwd() {
-  const [showPwd, setShowPwd] = useState(false);
+  const router = useRouter();
   return (
     <div className="">
       <div className="px-7 py-4 userSignupHeader flex flex-row items-center justify-between border-b-[1px] border-[#E0E0E0]">
-        <Link href="/">
+        <div onClick={() => router.back()}>
           <GrClose className="text-[#BDBDBD] text-[16px]" />
-        </Link>
+        </div>
         <div className="text-[#545454] text-[16px] font-semibold font-nunito">
           Forgot Password?
         </div>

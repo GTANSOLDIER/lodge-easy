@@ -23,11 +23,7 @@ export default function Search() {
   return (
     <div className="relative">
       <div
-        className={
-          openFilter
-            ? "block fixed bg-white bottom-0 top-0 left-0 w-full z-50 transition-all duration-300 pb-32 overflow-y-scroll"
-            : "block fixed bg-white top-0 -left-[100%] w-full h-full transition-all duration-300"
-        }
+        className={`block fixed bg-white bottom-0 top-0 ${openFilter ? "left-0" : "left-[-100%]"} w-full z-50 transition-all duration-300 pb-32 overflow-y-scroll`}
       >
         <div className="border-b-[1px] border-b-[#E0E0E0] filterHeader flex flex-row justify-between items-center px-7 mt-4 pb-4">
           <GrClose
