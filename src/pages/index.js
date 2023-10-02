@@ -327,7 +327,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white sticky bottom-0 flex flex-row text-[#545454] justify-between items-center py-3 px-[30%] border-t-[3px] z-20">
+      <div className="bg-white fixed w-full bottom-0 flex flex-row text-[#545454] justify-between items-center py-3 px-[30%] border-t-[3px] z-20">
         <Link href="/User/Signup">
           <div className="flex flex-col justify-center items-center">
             <LiaUserCircle className="text-[24px]" />
