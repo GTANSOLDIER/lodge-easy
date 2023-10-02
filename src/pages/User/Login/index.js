@@ -74,7 +74,7 @@ export default function Login() {
           </button>
         </Link>
         <div className="h-[45px] flex flex-row items-center justify-center border-[1px] border-[#545454] rounded mt-4">
-          <Image src={google} className="" />
+          <Image src={google} alt="googleIcon" className="" />
           <div className="pl-2 text-[#545454]">Sign in with Google</div>
         </div>
       </div>

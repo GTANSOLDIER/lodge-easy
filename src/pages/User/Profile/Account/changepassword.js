@@ -103,7 +103,7 @@ export default function ChangePwd() {
         } rounded-t-2xl bg-white w-full px-7 flex flex-col items-center justify-center absolute transition-all duration-300 z-50`}
       >
         <div className="relative w-[47px] h-[33px] mt-[60px] mb-[30px]">
-          <Image src={successIcon} layout="fill" />
+          <Image src={successIcon} alt="successIcon" layout="fill" />
         </div>
         <div className="text-[#545454] mb-[4px] font-golos text-[24px] font-semibold">
           Changed Successfully!
