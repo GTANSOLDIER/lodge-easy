@@ -60,9 +60,11 @@ export default function Login() {
               Remember Me
             </div>
           </div>
-          <div className="text-[#458CA2] text-[14px] font-nunito font-medium">
-            Forgot Password?
-          </div>
+          <Link href="/User/forgotpassword">
+            <div className="text-[#458CA2] text-[14px] font-nunito font-medium">
+              Forgot Password?
+            </div>
+          </Link>
         </div>
       </div>
       <div className="px-7 py-8">

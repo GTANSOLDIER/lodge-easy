@@ -243,7 +243,7 @@ export default function Search() {
             </div>
           </div>
         </div>
-        <div className="filterFooter w-full px-7 py-3 fixed bottom-0 left-0 flex flex-row items-center justify-between bg-white border-t-[1px] border-t-[#BDBDBD]">
+        <div className={`filterFooter w-full px-7 py-3 ${openFilter ? "left-0 ": "left-[-100%]"} fixed bottom-0 flex flex-row items-center justify-between bg-white border-t-[1px] border-t-[#BDBDBD] transition-all duration-300`}>
           <div className="text-[#707070] text-[14px] font-nunito font-bold">
             {" "}
             Clear all{" "}
@@ -290,7 +290,7 @@ export default function Search() {
           ))}
       </div>
 
-      <div className="bg-white sticky bottom-0 flex flex-row text-[#545454] justify-between items-center py-3 px-[30%] border-t-[3px] z-20">
+      <div className="bg-white fixed w-full bottom-0 flex flex-row text-[#545454] justify-between items-center py-3 px-[30%] border-t-[3px] z-20">
         <Link href="/User/Signup">
           <div className="flex flex-col justify-center items-center">
             <LiaUserCircle className="text-[24px]" />

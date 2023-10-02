@@ -46,12 +46,14 @@ export default function Profile() {
           <MdKeyboardArrowRight className="text-[24px]" />
         </div>
       </Link>
-      <div className="mx-[30px] py-[20px] flex flex-row items-center justify-between border-b-[1px] border-b-[#E0E0E0]">
-        <div className="text-[14px] text-[#9D9D9D] font-nunito font-normal pl-[16px]">
-          Account
+      <Link href="/User/Profile/Account">
+        <div className="mx-[30px] py-[20px] flex flex-row items-center justify-between border-b-[1px] border-b-[#E0E0E0]">
+          <div className="text-[14px] text-[#9D9D9D] font-nunito font-normal pl-[16px]">
+            Account
+          </div>
+          <MdKeyboardArrowRight className="text-[24px]" />
         </div>
-        <MdKeyboardArrowRight className="text-[24px]" />
-      </div>
+      </Link>
       <div className="text-[16px] text-[#545454] font-nunito font-bold mx-[30px] mt-[20px] mb-[10px] ">
         Register as Agent
       </div>
