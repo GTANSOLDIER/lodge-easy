@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 export default function HostelItemOpen() {
   const router = useRouter();
   const query = router.query;
+  const id = query.id;
   const name = query.name;
   const location = query.location;
   const area = query.area;
@@ -19,7 +20,7 @@ export default function HostelItemOpen() {
 
   const [saved, setSaved] = useState(false);
   return (
-    <div>
+    <div key={id}>
       <div
         className="absolute top-3 right-3 z-50"
         onClick={() => setSaved(!saved)}

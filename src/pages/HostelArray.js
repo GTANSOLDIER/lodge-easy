@@ -1,3 +1,8 @@
+export default function Harray() {
+  return(
+    <div>Harray</div>
+  );
+}
 export const hostelArray = [
   {
     id: 1,
