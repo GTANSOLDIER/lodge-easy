@@ -5,8 +5,11 @@ import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { AiOutlineEye } from "react-icons/ai";
 import Image from "next/image";
 import successIcon from "../../../../assets/successIcon.png";
+import { IoIosArrowBack } from "react-icons/io";
+import { useRouter } from "next/router";
 
 export default function ChangePwd() {
+  const router = useRouter();
   const [showOldPwd, setShowOldPwd] = useState(false);
   const [showNewPwd, setShowNewPwd] = useState(false);
   const [showConfPwd, setShowConfPwd] = useState(false);
@@ -18,10 +21,11 @@ export default function ChangePwd() {
           onSuccess ? "absolute opacity-100" : "hidden opacity-0"
         } top-0 h-full w-full transition-opacity duration-300 bg-[#0000002a] z-10`}
       ></div>
-      <div className="px-7 py-4 userSignupHeader flex flex-row items-center justify-between border-b-[1px] border-[#E0E0E0]">
-        <div className="text-[#545454] text-[16px] font-semibold font-nunito">
-          Password
+      <div className="text-[16px] items-center flex font-nunito font-bold py-[21px] px-[20px] border-[1px] border-[#EAEAEA]">
+        <div className="mr-[10px]" onClick={() => router.back()}>
+          <IoIosArrowBack className="text-[24px]"/>
         </div>
+        Password
       </div>
       <div className=" mt-[20px] px-7">
         <div className="text-[#9D9D9D] font-nunito text-[16px] font-bold">

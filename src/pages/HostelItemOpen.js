@@ -1,5 +1,4 @@
 import { Carousel } from "react-responsive-carousel";
-import Image from "next/image";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
@@ -7,6 +6,7 @@ import { useState } from "react";
 import { hostelArray } from "./HostelArray";
 import HostelItem from "./HostelItem";
 import { useRouter } from "next/router";
+import { AiOutlineClose } from "react-icons/ai";
 
 export default function HostelItemOpen() {
   const router = useRouter();
@@ -21,15 +21,17 @@ export default function HostelItemOpen() {
   const [saved, setSaved] = useState(false);
   return (
     <div key={id}>
-      <div
-        className="absolute top-3 right-3 z-50"
-        onClick={() => setSaved(!saved)}
-      >
-        {saved ? (
-          <AiFillHeart className="text-white text-[24px]" />
-        ) : (
-          <AiOutlineHeart className="text-white text-[24px]" />
-        )}
+      <div className="absolute top-3 z-50 px-3 flex items-center justify-between w-full">
+        <div className="text-white" onClick={() => router.back()}>
+          <AiOutlineClose className="text-[24px] text-white"/>
+        </div>
+        <div className="" onClick={() => setSaved(!saved)}>
+          {saved ? (
+            <AiFillHeart className="text-white text-[24px]" />
+          ) : (
+            <AiOutlineHeart className="text-white text-[24px]" />
+          )}
+        </div>
       </div>
       <Carousel
         showArrows={true}

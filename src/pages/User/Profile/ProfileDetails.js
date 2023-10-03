@@ -3,14 +3,19 @@ import { useState } from "react";
 import Link from "next/link";
 import { hostelArray } from "@/pages/HostelArray";
 import HostelItem from "@/pages/HostelItem";
+import { IoIosArrowBack } from "react-icons/io";
+import { useRouter } from "next/router";
 
 export default function ProfileDetails() {
   const [online, checkOnline] = useState(true);
+  const router = useRouter();
 
   return (
     <div className="pb-[80px]">
-      <div className="px-[30px] py-[20px] font-nunito font-bold text-[16px] text-[#545454] border-b-[1px] border-b-[#E0E0E0]">
-        {" "}
+      <div className="flex px-[20px] py-[20px] font-nunito font-bold text-[16px] text-[#545454] border-b-[1px] border-b-[#E0E0E0]">
+        <Link href="/User/Profile" className="mr-[10px]">
+          <IoIosArrowBack className="text-[24px]" />
+        </Link>{" "}
         Profile{" "}
       </div>
       <div className="w-full flex items-center justify-center mt-[20px]">
@@ -81,7 +86,14 @@ export default function ProfileDetails() {
         </div>
         <div className="grid grid-cols-2 px-[23px]">
           {hostelArray.map((h) => (
-            <HostelItem area={h.area} id={h.id} name={h.name} location={h.location} price={h.price} comment={h.comment}/>
+            <HostelItem
+              area={h.area}
+              id={h.id}
+              name={h.name}
+              location={h.location}
+              price={h.price}
+              comment={h.comment}
+            />
           ))}
         </div>
       </div>

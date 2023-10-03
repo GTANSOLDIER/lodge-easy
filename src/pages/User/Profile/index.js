@@ -2,12 +2,20 @@ import Footer from "./Footer";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useState } from "react";
 import Link from "next/link";
+import LogoutIcon from "../../../assets/logoutIcon.png";
+import Image from "next/image";
 
 export default function Profile() {
   const [online, checkOnline] = useState(true);
+  const [onClickLogout, setOnClickLogout] = useState(false);
 
   return (
-    <div className="pb-[76px]">
+    <div className="pb-[76px] relative overflow-hidden">
+      <div
+        className={` ${
+          onClickLogout ? "absolute opacity-100" : "hidden opacity-0"
+        } top-0 h-full w-full transition-opacity duration-300 bg-[#0000002a] z-10`}
+      ></div>
       <div className="px-[30px] py-[20px] font-nunito font-bold text-[16px] text-[#545454] border-b-[1px] border-b-[#E0E0E0]">
         {" "}
         Profile{" "}
@@ -55,27 +63,23 @@ export default function Profile() {
         </div>
       </Link>
       <div className="text-[16px] text-[#545454] font-nunito font-bold mx-[30px] mt-[20px] mb-[10px] ">
-        Register as Agent
-      </div>
-      <div className="mx-[30px] pt-[10px] pb-[20px] flex flex-row items-center justify-between border-b-[1px] border-b-[#E0E0E0]">
-        <div className="text-[14px] text-[#9D9D9D] font-nunito font-normal pl-[16px]">
-          List an Apartment
-        </div>
-        <MdKeyboardArrowRight className="text-[24px]" />
-      </div>
-      <div className="text-[16px] text-[#545454] font-nunito font-bold mx-[30px] mt-[20px] mb-[10px] ">
         Support
       </div>
-      <div className="mx-[30px] pt-[10px] pb-[20px] flex flex-row items-center justify-between border-b-[1px] border-b-[#E0E0E0]">
-        <div className="text-[14px] text-[#9D9D9D] font-nunito font-normal pl-[16px]">
-          Help center
+      <Link href="/User/Profile/HelpCenter">
+        <div className="mx-[30px] pt-[10px] pb-[20px] flex flex-row items-center justify-between border-b-[1px] border-b-[#E0E0E0]">
+          <div className="text-[14px] text-[#9D9D9D] font-nunito font-normal pl-[16px]">
+            Help center
+          </div>
+          <MdKeyboardArrowRight className="text-[24px]" />
         </div>
-        <MdKeyboardArrowRight className="text-[24px]" />
-      </div>
+      </Link>
       <div className="text-[16px] text-[#545454] font-nunito font-bold mx-[30px] mt-[20px] mb-[10px] ">
         Logout
       </div>
-      <div className="mx-[30px] pt-[10px] pb-[20px] flex flex-row items-center justify-between border-b-[1px] border-b-[#E0E0E0]">
+      <div
+        className="mx-[30px] pt-[10px] pb-[20px] flex flex-row items-center justify-between border-b-[1px] border-b-[#E0E0E0]"
+        onClick={() => setOnClickLogout(true)}
+      >
         <div className="text-[14px] text-[#9D9D9D] font-nunito font-normal pl-[16px]">
           Logout
         </div>
@@ -90,6 +94,34 @@ export default function Profile() {
         LodgeEasy &copy; 2023 All rights reserved.
       </div>
       <Footer />
+      <div
+        className={`${
+          onClickLogout ? "bottom-0" : "bottom-[-100%]"
+        } rounded-t-2xl bg-white w-full px-7 flex flex-col items-center justify-center fixed transition-all duration-300 z-50`}
+      >
+        <div className="relative w-[53px] h-[60px] mt-[60px] mb-[30px]">
+          <Image src={LogoutIcon} alt="successIcon" />
+        </div>
+        <div className="text-[#545454] mb-[4px] font-golos text-[24px] font-semibold">
+          You are about to Logout
+        </div>
+        <div className="text-[#9D9D9D] text-center font-nunito text-[14px] font-normal">
+          You might miss out on important updates if you leave now
+        </div>
+        <div className="flex mt-1">
+          <button
+            className="mt-[12px] mb-[40px] h-[36px] w-[69px] text-[14px] font-poppins font-medium text-[#458CA2] mr-10 rounded"
+            onClick={() => setOnClickLogout(false)}
+          >
+            Cancel
+          </button>
+          <Link href="/">
+            <button className="mt-[12px] mb-[40px] h-[36px] w-[69px] text-[14px] font-poppins font-medium text-white bg-[#458CA2] rounded">
+              Logout
+            </button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,11 +1,16 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Footer from "../Footer";
 import Link from "next/link";
+import { IoIosArrowBack } from "react-icons/io";
 
 export default function Account() {
+
   return (
     <div>
-      <div className="text-[16px] font-nunito font-bold py-[21px] px-[30px] border-[1px] border-[#EAEAEA]">
+      <div className="text-[16px] items-center flex font-nunito font-bold py-[21px] px-[20px] border-[1px] border-[#EAEAEA]">
+        <Link className="mr-[10px]" href="/User/Profile">
+          <IoIosArrowBack className="text-[24px]"/>
+        </Link>
         Account
       </div>
       <Link href="Account/changepassword">

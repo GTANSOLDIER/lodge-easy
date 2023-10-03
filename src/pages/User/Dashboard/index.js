@@ -230,7 +230,7 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="w-full px-7">
-        <div className="min-w-[85vw] border-[1px] px-2 border-[#EAEAEA] rounded min-h-[40vh] pl-[15px] whitespace-nowrap overflow-x-scroll">
+        <div className="min-w-[85vw] border-[1px] pb-5 px-2 border-[#EAEAEA] rounded min-h-[40vh] pl-[15px] whitespace-nowrap overflow-x-scroll">
           <div
             className={
               inspList.filter((list) =>

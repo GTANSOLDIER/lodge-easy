@@ -138,3 +138,15 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.customerCareImg {
+  background-image: url("../assets/helpCenterImg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.userImg1 {
+  background-image: url("../assets/userImg1.jpg");
+  background-position: center;
+  background-size: cover;
+}

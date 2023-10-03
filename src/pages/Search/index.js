@@ -9,6 +9,7 @@ import { useState } from "react";
 import HostelItem from "../HostelItem";
 import Link from "next/link";
 import { hostelArray } from "../HostelArray";
+import { IoIosArrowBack } from "react-icons/io";
 
 export default function Search() {
   const [searchValue, setSearchValue] = useState("");
@@ -21,9 +22,11 @@ export default function Search() {
   const [openPriceFilter, setOpenPriceFilter] = useState(false);
 
   return (
-    <div className="relative">
+    <div className="relative pb-20">
       <div
-        className={`block fixed bg-white bottom-0 top-0 ${openFilter ? "left-0" : "left-[-100%]"} w-full z-50 transition-all duration-300 pb-32 overflow-y-scroll`}
+        className={`block fixed bg-white bottom-0 top-0 ${
+          openFilter ? "left-0" : "left-[-100%]"
+        } w-full z-50 transition-all duration-300 pb-32 overflow-y-scroll`}
       >
         <div className="border-b-[1px] border-b-[#E0E0E0] filterHeader flex flex-row justify-between items-center px-7 mt-4 pb-4">
           <GrClose
@@ -239,7 +242,11 @@ export default function Search() {
             </div>
           </div>
         </div>
-        <div className={`filterFooter w-full px-7 py-3 ${openFilter ? "left-0 ": "left-[-100%]"} fixed bottom-0 flex flex-row items-center justify-between bg-white border-t-[1px] border-t-[#BDBDBD] transition-all duration-300`}>
+        <div
+          className={`filterFooter w-full px-7 py-3 ${
+            openFilter ? "left-0 " : "left-[-100%]"
+          } fixed bottom-0 flex flex-row items-center justify-between bg-white border-t-[1px] border-t-[#BDBDBD] transition-all duration-300`}
+        >
           <div className="text-[#707070] text-[14px] font-nunito font-bold">
             {" "}
             Clear all{" "}
@@ -252,6 +259,13 @@ export default function Search() {
             Save{" "}
           </div>
         </div>
+      </div>
+
+      <div className="px-[20px] flex py-[20px] font-nunito font-bold text-[16px] text-[#545454] border-b-[1px] border-b-[#E0E0E0]">
+        <Link className="mr-[10px]" href="/">
+          <IoIosArrowBack className="text-[24px]" />
+        </Link>{" "}
+        Search{" "}
       </div>
 
       <div className="rounded-md mt-7 mx-7 searchBar border-[2px] border-[#bdbdbd] flex flex-row items-center justify-center">
@@ -282,7 +296,14 @@ export default function Search() {
             house.name.toLowerCase().includes(searchValue.toLowerCase())
           )
           .map((h) => (
-            <HostelItem area={h.area} id={h.id} name={h.name} location={h.location} price={h.price} comment={h.comment}/>
+            <HostelItem
+              area={h.area}
+              id={h.id}
+              name={h.name}
+              location={h.location}
+              price={h.price}
+              comment={h.comment}
+            />
           ))}
       </div>
 

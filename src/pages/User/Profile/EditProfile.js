@@ -1,15 +1,19 @@
 import Footer from "./Footer";
-import { useState } from "react";
 import Link from "next/link";
-import { hostelArray } from "@/pages/HostelArray";
-import HostelItem from "@/pages/HostelItem";
 import { FiUpload } from "react-icons/fi";
+import { useRouter } from "next/router";
+import { IoIosArrowBack } from "react-icons/io";
 
 export default function EditProfile() {
+
+  const router = useRouter();
+
   return (
     <div className="pb-[80px]">
-      <div className="px-[30px] py-[20px] font-nunito font-bold text-[16px] text-[#545454] border-b-[1px] border-b-[#E0E0E0]">
-        {" "}
+      <div className="px-[20px] flex py-[20px] font-nunito font-bold text-[16px] text-[#545454] border-b-[1px] border-b-[#E0E0E0]">
+        <div className="mr-[10px]" onClick={() => router.back()}>
+          <IoIosArrowBack className="text-[24px]" />
+        </div>{" "}
         Profile{" "}
       </div>
       <div className="w-full flex items-center justify-center mt-[20px]">

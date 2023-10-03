@@ -21,7 +21,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
 
   return (
-    <main className="relative">
+    <main className="relative pb-20">
       <div className="Header w-full border-[1px] border-[#545454]-500 flex flex-row justify-between items-center px-[50px] py-[15px] mx-auto">
         <div className="brandNameAndLogo flex flex-row items-center justify-center w-full md:w-auto">
           <Image alt="logo1" src={logo1} className="w-[130px] mr-[3px]" />
