@@ -34,6 +34,7 @@ export default function Footer() {
           Profile
         </div>
       </Link>
+      {/*...*/}
     </div>
   );
 }
