@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import logo1 from "../assets/logo1.png";
 import { FaUserAlt } from "react-icons/fa";
-import { BiSolidUpArrow } from "react-icons/bi";
+import { BiSolidDownArrow } from "react-icons/bi";
 import { FaSearch } from "react-icons/fa";
 import { LiaUserCircle } from "react-icons/lia";
 import { HiOutlineMail } from "react-icons/hi";
@@ -16,37 +15,28 @@ import HostelItem from "./HostelItem";
 import Link from "next/link";
 import { hostelArray } from "./HostelArray";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <main className="relative pb-20">
-      <div className="Header w-full border-[1px] border-[#545454]-500 flex flex-row justify-between items-center px-[50px] py-[15px] mx-auto">
-        <div className="brandNameAndLogo flex flex-row items-center justify-center w-full md:w-auto">
+    <main className="relative pb-20 overflow-hidden">
+      <div className="Header w-full border-[1px] border-[#545454]-500 flex justify-center items-center px-[30px] py-[15px]">
+        <div className="">
           <Image alt="logo1" src={logo1} className="w-[130px] mr-[3px]" />
         </div>
-        <div className="RegisterAsAgentSect md:flex flex-row items-center hidden">
-          <div className="mr-[30px] font-bold text-[#545454]">
-            {" "}
-            Register as Agent{" "}
-          </div>
-          <div className="flex flex-row items-center border-[1px] py-[10px] px-[15px] rounded-[10px]">
-            <div className="relative mr-[15px]">
-              <BiSolidUpArrow className="text-[10px] text-[#545454]" />
-              <select className="absolute top-0 w-full h-full opacity-0">
-                {/* <option value="0"></option> */}
-                <option value="1" className="p-5">
-                  Option 1
-                </option>
-                <option value="2">Option 2</option>
-              </select>
-            </div>
-            <FaUserAlt className="text-[15px] text-[#545454]" />
-          </div>
+        <div onClick={() => setMenuOpen(!menuOpen)} className="flex items-center justify-center absolute right-[15px] border-[1px] border-[#545454] p-[7px] rounded-md">
+          <BiSolidDownArrow className={`text-[10px] text-[#545454] transition-all duration-500 ${menuOpen ? "rotate-180" : "rotate-0"}`}/>
+          <FaUserAlt className="ml-[7px] text-[10px] text-[#545454]"/>
         </div>
       </div>
-
+      <div className={`bg-white z-50 flex flex-col w-[50vw] text-center absolute transition-all duration-500 ${menuOpen ? "right-0":"right-[-100%]"}`}>
+        <Link href="/User/Signup" className="border-[1px] text-[14px] font-nunito border-[#545454] text-[#545454] py-4">
+          Register as a User
+        </Link>
+        <Link href="/Agent/Signup" className="border-[1px] text-[14px] font-nunito border-[#545454] text-[#545454] py-4">
+          Register as an Agent
+        </Link>
+      </div>
       <div className="HeroSection w-full h-[40vh] flex flex-col justify-center items-center text-white text-center">
         <div className={`text-[24px] font-golos font-normal`}>
           Find Your Perfect Home
@@ -96,7 +86,7 @@ export default function Home() {
             How does it work
           </div>
           <div className="text-[12px] w-[70%] text-[#545454] mt-3 font-nunito font-normal">
-          Embark on a smooth journey to off-campus living bliss!
+            Embark on a smooth journey to off-campus living bliss!
           </div>
           <div className="mt-4 flex flex-col items-center justify-center w-full">
             <div className="w-[70%]">
@@ -109,7 +99,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="font-nunito font-normal text-[#707070] pl-10 ml-[22px] border-l-4 text-left border-l-[#458CA2] text-[12px] leading-normal -mt-2 pb-2">
-              Gain access to a vast database of student-tailored apartments. Your path to comfort and convenience starts here!
+                Gain access to a vast database of student-tailored apartments.
+                Your path to comfort and convenience starts here!
               </div>
               <div className="flex flex-row justify-start items-center">
                 <div className="bg-[#458CA2] p-2 rounded-full border-[#ECF4F6] border-4 mr-5">
@@ -120,7 +111,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="text-[#707070] font-nunito font-normal pl-10 ml-[22px] border-l-4 text-left -mt-2 pb-2 border-l-[#458CA2] text-[12px] leading-normal">
-                Our smart tech finds your perfect fit, no more irrelevant listings – we've got you covered!
+                Our smart tech finds your perfect fit, no more irrelevant
+                listings – we've got you covered!
               </div>
               <div className="flex flex-row justify-start items-center">
                 <div className="bg-[#458CA2] p-2 rounded-full border-[#ECF4F6] border-4 mr-5">
@@ -131,7 +123,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="text-[#707070] font-nunito font-normal pl-10 ml-[26px] text-left border-l-[#458CA2] -mt-2 pb-2 text-[12px] leading-normal">
-              Excited about a potential home? Request an Inspection, and our Agents will arrange a viewing at your convenience.
+                Excited about a potential home? Request an Inspection, and our
+                Agents will arrange a viewing at your convenience.
               </div>
             </div>
             <Link href="/User/Signup">
@@ -149,11 +142,19 @@ export default function Home() {
           Discover our New Listings
         </div>
         <div className="text-center font-nunito font-normal mt-3 text-[14px] text-[#545454]">
-        Make Lodge Easy your ultimate destination for a seamless and stress-free apartment hunting experience. Start exploring now!
+          Make Lodge Easy your ultimate destination for a seamless and
+          stress-free apartment hunting experience. Start exploring now!
         </div>
         <div className="hostelListings w-full mt-4 grid grid-cols-2">
           {hostelArray.map((h) => (
-            <HostelItem area={h.area} id={h.id} name={h.name} location={h.location} price={h.price} comment={h.comment}/>
+            <HostelItem
+              area={h.area}
+              id={h.id}
+              name={h.name}
+              location={h.location}
+              price={h.price}
+              comment={h.comment}
+            />
           ))}
         </div>
       </div>
