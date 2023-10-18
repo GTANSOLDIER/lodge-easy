@@ -126,7 +126,7 @@ export default function Dashboard() {
           )}{" "}
         </span>
         <span
-          className={`generalMenu flex flex-col w-[50vw] rounded-bl absolute top-[64px] items-center border-[1px] border-[#eaeaea] bg-white transition-all ${
+          className={`generalMenu flex flex-col w-[50vw] rounded-bl absolute top-[64px] z-50 items-center border-[1px] border-[#eaeaea] bg-white transition-all ${
             showMenu ? "right-0" : "-right-[100%]"
           }`}
         >
