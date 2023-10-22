@@ -9,7 +9,7 @@ export default function HostelItem(props) {
   return (
     <div
       key={props.id}
-      className="hostelItem relative flex flex-col mx-2 my-4 font-nunito"
+      className="hostelItem relative flex flex-col font-nunito overflow-hidden h-[160px] lg:h-[240px] w-[142px] lg:w-[250px]"
     >
       <div
         className="absolute top-2 right-2 z-50"
@@ -26,7 +26,7 @@ export default function HostelItem(props) {
         query: props, //the name
       }}>
         <div
-          className="imageSect rounded w-full h-[90px]"
+          className="imageSect rounded-[10px] w-full h-[79px] lg:h-[125px]"
         ></div>
         <div
           className="nameLocation flex flex-row items-center mt-1"

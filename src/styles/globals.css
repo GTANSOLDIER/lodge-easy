@@ -17,12 +17,6 @@ main {
   padding: 0;
 }
 
-.HeroSection {
-  background-image: url("../assets/housePic.png");
-  background-position: center;
-  background-size: cover;
-}
-
 .imageSect {
   background-image: url("../assets/houseImg1.jpg");
   background-position: center;
