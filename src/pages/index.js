@@ -10,7 +10,7 @@ import { GoMail } from "react-icons/go";
 import { FaFacebookF } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { AiFillYoutube } from "react-icons/ai";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HostelItem from "./HostelItem";
 import Link from "next/link";
 import { hostelArray } from "./HostelArray";
@@ -23,9 +23,23 @@ import heroImg4 from "../assets/heroImg4.jpg";
 import home1 from "../assets/home1.png";
 import home2 from "../assets/home2.png";
 import home3 from "../assets/home3.png";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const router = useRouter();
+  const search = () => {
+    router.push({
+      pathname: "/Search",
+      query: { search: searchValue },
+    });
+  }
+  const enterPress = event => {
+    if (event.key === 'Enter') {
+      search();
+    }
+  };
 
   return (
     <main className="relative pb-20 lg:pb-0 overflow-hidden">
@@ -121,12 +135,18 @@ export default function Home() {
               type="text"
               placeholder="Search by location / house type"
               className="bg-[#f1f1f1] md:w-[88%] w-[85%] h-10 p-3 text-black homeSearchInput text-[12px] lg:text-[16px] outline-none"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              onKeyDown={enterPress}
             />
-            <Link className="md:w-[12%] w-[15%]" href="/Search">
+            <div
+              className="md:w-[12%] w-[15%]"
+              onClick={() => search()}
+            >
               <button className="flex items-center justify-center bg-[#458CA2] w-full h-10">
                 <AiOutlineSearch className="text-white" />
               </button>
-            </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -245,7 +265,7 @@ export default function Home() {
           Make Lodge Easy your ultimate destination for a seamless and
           stress-free apartment hunting experience. Start exploring now!
         </div>
-        <div className="hostelListings mt-4 lg:mt-[40px] gap-x-[16px] mx-[30px] lg:mx-[40px] lg: lg:gap-x-[70px] gap-y-[24px] md:mt-[40px] grid grid-cols-2 md:grid-cols-3 md:items justify-items-end">
+        <div className="hostelListings mt-4 lg:mt-[40px] lg:mx-[40px] lg: lg:gap-x-[70px] md:mt-[40px] grid grid-cols-2 md:grid-cols-3 md:items justify-items-center">
           {hostelArray.map((h) => (
             <HostelItem
               area={h.area}
@@ -440,7 +460,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white md:hidden fixed w-full bottom-0 flex flex-row text-[#545454] justify-between items-center py-3 px-[30%] border-t-[3px] z-20">
+      <div className="bg-white md:hidden fixed w-full bottom-0 flex flex-row text-[#545454] justify-between items-center py-[8px] px-[30%] border-t-[1px] z-20">
         <Link href="/User/Signup">
           <div className="flex flex-col justify-center items-center">
             <LiaUserCircle className="text-[24px]" />

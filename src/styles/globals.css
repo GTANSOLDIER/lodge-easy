@@ -53,11 +53,6 @@ input {
     accent-color: #BDBDBD;
 }
 
-.apartFilListOpen {
-  animation-name: filterAnim;
-  animation-duration: 300ms;
-}
-
 .rememberMeCheck {
   accent-color: #458CA2;
 }

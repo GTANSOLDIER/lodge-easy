@@ -9,7 +9,7 @@ export default function HostelItem(props) {
   return (
     <div
       key={props.id}
-      className="hostelItem relative flex flex-col font-nunito overflow-hidden h-[160px] lg:h-[240px] w-[142px] lg:w-[250px]"
+      className="hostelItem relative flex flex-col font-nunito overflow-hidden my-[12px] mx-[8px] h-[160px] lg:h-[240px] w-[142px] lg:w-[250px]"
     >
       <div
         className="absolute top-2 right-2 z-50"
