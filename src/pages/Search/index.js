@@ -13,6 +13,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useRouter } from "next/router";
 import lodgeeasyLogo from "../../assets/logo1.png";
 import Image from "next/image";
+import { useContext } from "react";
 
 export default function Search() {
   const [searchValue, setSearchValue] = useState("");
@@ -299,19 +300,19 @@ export default function Search() {
       </div>
 
       <div className="pt-7 px-7 lg:px-[70px] lg:py-[24px] flex items-center justify-between lg:border-b-[4px] lg:border-b-[#EAEAEA]">
-        <div className="lg:block hidden">
+        <Link href="/" className="lg:block hidden">
           <Image
             alt="logo1"
             src={lodgeeasyLogo}
             className="w-[130px] mr-[3px]"
           />
-        </div>
-        <div className="rounded-md lg:w-[600px] w-full searchBar border-[2px] border-[#bdbdbd] flex flex-row items-center justify-center">
+        </Link>
+        <div className="rounded-md lg:w-[600px] w-full searchBar border-[2px] border-[#bdbdbd] flex flex-row lg:flex-row-reverse lg:pl-[24px] items-center justify-center">
           <AiOutlineSearch className="text-[#BDBDBD] text-[24px] w-[15%]" />
           <input
             type="text"
             placeholder="Search..."
-            className="py-2 w-[70%] lg:w-[85%] text-[14px] border-none outline-none"
+            className="py-2 w-[70%] lg:w-[85%] text-[14px] rounded-md border-none outline-none"
             onChange={(e) => {
               setSearchValue(e.target.value);
               setSearchResponse("showing search results for ");
@@ -355,7 +356,7 @@ export default function Search() {
           ))}
       </div>
 
-      <div className="bg-white fixed w-full bottom-0 flex flex-row text-[#545454] justify-between items-center py-3 px-[30%] border-t-[3px] z-20">
+      <div className="bg-white lg:hidden fixed w-full bottom-0 flex flex-row text-[#545454] justify-between items-center py-3 px-[30%] border-t-[3px] z-20">
         <Link href="/User/Signup">
           <div className="flex flex-col justify-center items-center">
             <LiaUserCircle className="text-[24px]" />

@@ -9,7 +9,7 @@ export default function HostelItem(props) {
   return (
     <div
       key={props.id}
-      className="hostelItem relative flex flex-col font-nunito overflow-hidden my-[12px] mx-[8px] h-[160px] lg:h-[240px] w-[142px] lg:w-[250px]"
+      className="hostelItem relative flex flex-col font-nunito overflow-hidden my-[12px] mx-[8px] h-[40vw] md:h-[25vw] lg:h-[20vw] w-[40vw] md:w-[25vw] lg:w-[20vw]"
     >
       <div
         className="absolute top-2 right-2 z-50"
@@ -23,10 +23,10 @@ export default function HostelItem(props) {
       </div>
       <Link href={{
         pathname: "/HostelItemOpen",
-        query: props, //the name
+        query: props,
       }}>
         <div
-          className="imageSect rounded-[10px] w-full h-[79px] lg:h-[125px]"
+          className="imageSect rounded-[10px] w-full h-[20vw] md:h-[13vw] lg:h-[10vw]"
         ></div>
         <div
           className="nameLocation flex flex-row items-center mt-1"

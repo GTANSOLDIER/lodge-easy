@@ -34,9 +34,9 @@ export default function Home() {
       pathname: "/Search",
       query: { search: searchValue },
     });
-  }
-  const enterPress = event => {
-    if (event.key === 'Enter') {
+  };
+  const enterPress = (event) => {
+    if (event.key === "Enter") {
       search();
     }
   };
@@ -91,6 +91,12 @@ export default function Home() {
         }`}
       >
         <Link
+          href="/Search"
+          className="text-[14px] font-nunito text-[#545454] p-[12px] w-full hover:bg-[#458CA2] hover:text-white transition-all duration-200"
+        >
+          Find a Home
+        </Link>
+        <Link
           href="/User/Signup"
           className="text-[14px] font-nunito text-[#545454] p-[12px] w-full hover:bg-[#458CA2] hover:text-white transition-all duration-200"
         >
@@ -139,10 +145,7 @@ export default function Home() {
               onChange={(e) => setSearchValue(e.target.value)}
               onKeyDown={enterPress}
             />
-            <div
-              className="md:w-[12%] w-[15%]"
-              onClick={() => search()}
-            >
+            <div className="md:w-[12%] w-[15%]" onClick={() => search()}>
               <button className="flex items-center justify-center bg-[#458CA2] w-full h-10">
                 <AiOutlineSearch className="text-white" />
               </button>
